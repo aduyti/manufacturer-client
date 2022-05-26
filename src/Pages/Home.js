@@ -5,11 +5,11 @@ import ProductsSection from './ProductsSection';
 
 const Home = () => {
     return (
-        <>
+        <div className="px-8 md:px-20">
             <Banner />
             <ProductsSection />
             <ContactUs />
-        </>
+        </div>
     );
 };
 

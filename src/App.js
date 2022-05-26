@@ -5,7 +5,7 @@ import Blogs from "./Pages/Blogs";
 
 function App() {
   return (
-    <div className="bg-rose-100">
+    <div className="bg-rose-100/50">
       <NavBar>
         <Routes>
           <Route index element={<Home />} />

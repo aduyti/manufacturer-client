@@ -2,8 +2,8 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div class="hero h-96 bg-base-200 mb-24">
-            <div class="hero-content flex-col lg:flex-row md:px-20">
+        <div class="hero mb-16">
+            <div class="hero-content flex-col lg:flex-row">
                 <img src="https://i.ibb.co/sjmGkHf/Banner.jpg"
                     class="max-w-sm rounded-lg shadow-2xl"
                 />
