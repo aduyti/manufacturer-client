@@ -5,7 +5,7 @@ import ContactUs from '../Components/ContactUs';
 import FindUs from '../Components/FindUs';
 import Footer from '../Components/Footer';
 import Reviews from '../Components/Reviews';
-import ProductsSection from './ProductsSection';
+import ProductsSection from '../Components/ProductsSection';
 
 const Home = () => {
     return (
