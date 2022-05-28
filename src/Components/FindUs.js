@@ -4,7 +4,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 const FindUs = () => {
     return (
         <div className="mb-10 mx-16">
-            <h3 className="text-primary pt-4 text-2xl font-bold text-center">Find Us</h3>
+            <h3 className="text-primary py-4 text-2xl font-bold text-center">Find Us</h3>
             <div className="w-full h-96 border-2 rounded-xl overflow-hidden">
                 <LoadScript googleMapsApiKey={process.env.REACT_APP_GoogleMap_API_KEY}>
                     <GoogleMap

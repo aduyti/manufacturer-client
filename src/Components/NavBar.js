@@ -20,7 +20,7 @@ const NavBar = ({ children }) => {
                         </ul>
                     </div>
                 </div>
-                <div class="mt-32">
+                <div class="mt-28">
                     {children}
                 </div>
                 <ToastContainer autoClose={1500} />
