@@ -20,6 +20,7 @@ const NavBar = ({ children }) => {
                         </ul>
                     </div>
                 </div>
+
                 {children}
                 <ToastContainer autoClose={1500} />
             </div>

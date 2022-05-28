@@ -5,7 +5,7 @@ const Banner = () => {
         <div class="hero mb-16">
             <div class="hero-content flex-col md:flex-row">
                 <img src="https://i.ibb.co/sjmGkHf/Banner.jpg"
-                    class="max-w-sm rounded-lg shadow-2xl"
+                    class="max-w-sm rounded-xl shadow-2xl"
                 />
                 <div className="pt-14 md:pt-0 md:px-20">
                     <h1 class="text-4xl sm:text-5xl font-bold"><span className="text-primary">The Bolts </span>Manufacturing</h1>
