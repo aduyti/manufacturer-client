@@ -7,6 +7,8 @@ import NotFound from "./Pages/NotFound";
 import Portfolio from "./Pages/Portfolio";
 import MyProfile from "./Pages/MyProfile";
 import Purchase from "./Pages/Purchase";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
