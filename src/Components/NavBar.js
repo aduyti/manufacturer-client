@@ -1,6 +1,8 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import NavLinks from './NavLinks';
+import Footer from '../Components/Footer';
+
 
 const NavBar = ({ children }) => {
     return (
@@ -23,7 +25,10 @@ const NavBar = ({ children }) => {
                 <div class="mt-28">
                     {children}
                 </div>
+
                 <ToastContainer autoClose={1500} />
+                <Footer />
+
             </div>
             <div class="drawer-side">
                 <label for="my-drawer-3" class="drawer-overlay"></label>

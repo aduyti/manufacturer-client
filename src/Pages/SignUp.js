@@ -2,7 +2,7 @@ import React from 'react';
 
 const SignUp = () => {
     return (
-        <div>
+        <div className="px-8 md:px-20">
 
         </div>
     );

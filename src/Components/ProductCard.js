@@ -18,7 +18,7 @@ const ProductCard = ({ bolt }) => {
                     <h2>In Stock: {Available}</h2>
                 </div>
                 <div class="card-actions justify-end">
-                    <button class="btn btn-primary w-full" onClick={() => navigate(`blot/${_id}`)}>Order Now</button>
+                    <button class="btn btn-primary w-full" onClick={() => navigate(`/purchase/${_id}`)}>Order Now</button>
                 </div>
             </div>
         </div>);
