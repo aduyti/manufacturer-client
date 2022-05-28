@@ -1,8 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../Components/SocialLogin';
 
 const Login = () => {
+    const navigate = useNavigate();
+    let location = useLocation();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
     return (
         <div className="px-8 md:px-20 h-screen">
             <h3 className="text-primary pt-4 text-2xl font-bold text-center pb-6">Login</h3>
@@ -12,15 +17,26 @@ const Login = () => {
                         <form >
                             <div class="form-control">
                                 <label class="label">
-                                    <span class="label-text">Email</span>
+                                    <span class="label-text">Email
+                                        {errors.logEmail?.type === "pattern" && (<span className="pl-5 text-red-600/75 text-xs">Enter a valid email</span>)}
+                                        {errors.logEmail?.type === "required" && (<span className="pl-5 text-red-600/75 text-xs">Email required</span>)}
+                                    </span>
                                 </label>
-                                <input type="text" placeholder="email" class="input input-bordered" />
+                                <input type="text"
+                                    {...register("logEmail",
+                                        { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ })}
+                                    placeholder="email" class="input input-bordered" />
                             </div>
                             <div class="form-control">
                                 <label class="label">
-                                    <span class="label-text">Password</span>
+                                    <span class="label-text">Password
+                                        {errors.logPass?.type === "required" && (<span className="pl-5 text-red-600/75 text-xs">Password required</span>)}
+                                        {errors.logPass?.type === "minLength" && (<span className="pl-5 text-red-600/75 text-xs">At least 6 characters</span>)}
+                                    </span>
                                 </label>
-                                <input type="text" placeholder="password" class="input input-bordered" />
+                                <input type="text"
+                                    {...register("logPass", { required: true, minLength: 6 })}
+                                    placeholder="password" class="input input-bordered" />
                                 <label class="label">
                                     <Link to="/signup" class="label-text-alt link link-hover">Sign Up</Link>
                                 </label>
