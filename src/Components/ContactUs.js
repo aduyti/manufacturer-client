@@ -23,7 +23,7 @@ const ContactUs = () => {
                             <label class="label">
                                 <span class="label-text">Your Query</span>
                             </label>
-                            <textarea placeholder="Write your feelings." class="input input-bordered h-24" />
+                            <textarea placeholder="Write your feelings." class="textarea textarea-bordered h-24" />
                         </div>
                         <div class="form-control mt-6">
                             <button class="btn btn-primary">Submit</button>
