@@ -12,7 +12,7 @@ const BusinessSummary = () => {
                 <p className="text-xl font-bold">Customers</p>
             </div>
             <div className="bg-accent h-28 flex  flex-col justify-center items-center rounded-xl">
-                <h4 className="text-5xl font-extrabold text-primary">60</h4>
+                <h4 className="text-5xl font-extrabold text-primary">60+</h4>
                 <p className="text-xl font-bold">types of Bolts</p>
             </div>
             <div className="bg-accent h-28 flex  flex-col justify-center items-center rounded-xl">

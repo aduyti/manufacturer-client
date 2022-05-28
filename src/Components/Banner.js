@@ -7,8 +7,8 @@ const Banner = () => {
                 <img src="https://i.ibb.co/sjmGkHf/Banner.jpg"
                     class="max-w-sm rounded-lg shadow-2xl"
                 />
-                <div className="md:px-20">
-                    <h1 class="text-5xl font-bold"><span className="text-primary">The Bolts </span>Manufacturing</h1>
+                <div className="pt-14 md:pt-0 md:px-20">
+                    <h1 class="text-4xl sm:text-5xl font-bold"><span className="text-primary">The Bolts </span>Manufacturing</h1>
                     <p class="py-6">We offers a wide assortment of bolts as per our valuable customers' requirements.</p>
                     <a href="#contact-us" class="btn btn-primary">Contact Us</a>
                 </div>

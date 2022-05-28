@@ -10,13 +10,13 @@ import ProductsSection from '../Components/ProductsSection';
 const Home = () => {
     return (
         <>
-            <div className="px-8 md:px-20">
+            <div className="px-8 md:px-20 mt-16">
                 <Banner />
                 <ProductsSection />
                 <BusinessSummary />
                 <Reviews />
                 <ContactUs />
-                <FindUs />
+                {/* <FindUs /> */}
             </div>
             <Footer />
         </>

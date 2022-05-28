@@ -10,14 +10,14 @@ const FindUs = () => {
                     <GoogleMap
                         mapContainerStyle={{ width: '100%', height: '100%' }}
                         center={{
-                            lat: 23.7770374,
-                            lng: 90.3967948
+                            lat: 23.7075222,
+                            lng: 90.4696992
                         }}
                         zoom={14}
                     >
                         <Marker position={{
-                            lat: 23.7770374,
-                            lng: 90.3967948
+                            lat: 23.7075222,
+                            lng: 90.4696992
                         }}
                             cursor="The Bolts Manufacturing" />
                     </GoogleMap>
