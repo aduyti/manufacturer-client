@@ -20,8 +20,9 @@ const NavBar = ({ children }) => {
                         </ul>
                     </div>
                 </div>
-
-                {children}
+                <div class="mt-32">
+                    {children}
+                </div>
                 <ToastContainer autoClose={1500} />
             </div>
             <div class="drawer-side">
