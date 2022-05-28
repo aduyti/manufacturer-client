@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const setOrder = order => {
-    axios.post('http://localhost:5555/order',
-        JSON.stringify(order)
-    )
+const setOrder = (order, available) => {
+
+    axios.post('http://localhost:5555/order', [order, available])
 }
 export default setOrder;
