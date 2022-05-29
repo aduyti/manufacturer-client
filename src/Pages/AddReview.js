@@ -9,10 +9,12 @@ const AddReview = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const reviewConfirm = async data => {
-        const review = data;
-        // review.uname = user.name;
-        // review.uemail = user.email;
-        // await axios.post('http://localhost:5555/addreview', review);
+        const review = {};
+        review.text = data.text;
+        review.rating = parseInt(data.rating);
+        review.uname = user.name;
+        review.uemail = user.email;
+        await axios.post('http://localhost:5555/addreview', review);
         navigate('/');
     }
 
@@ -28,7 +30,7 @@ const AddReview = () => {
                                 <span class="label-text">rating</span>
                             </label>
                             <select placeholder="rating"
-                                {...register("address", { required: true })} class="input input-bordered">
+                                {...register("rating", { required: true })} class="input input-bordered">
                                 <option value="5">5</option>
                                 <option value="4">4</option>
                                 <option value="3">3</option>

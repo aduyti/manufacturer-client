@@ -6,8 +6,10 @@ import { toast } from 'react-toastify';
 import Spinner from '../Components/Spinner';
 import setOrder from '../Utilities/DB/setOrder';
 import useProduct from '../Utilities/Hooks/useProduct';
+import useUser from '../Utilities/Hooks/useUser';
 
 const Purchase = () => {
+    const [user] = useUser();
     const { id } = useParams();
     const [bolt] = useProduct(id);
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -26,7 +28,7 @@ const Purchase = () => {
             quantity: quantity,
             status: "placed",
             price: parseFloat((bolt.unitprice * quantity).toFixed(2)),
-            uEmail: "user@email.com"
+            uEmail: user.email
         };
         setNewOrder(order);
         setOrder(order, (available - quantity));
@@ -81,7 +83,7 @@ const Purchase = () => {
                                     <p class="py-4">Order Quantity: {newOrder.quantity}</p>
                                     <p class="py-4">Total Amount: ${newOrder.price}</p>
                                     <div class="modal-action">
-                                        <label onClick={() => navigate(`/myorder`)} class="btn btn-primary">View Orders</label>
+                                        <label onClick={() => navigate(`/dashboard/myorders`)} class="btn btn-primary">View Orders</label>
                                     </div>
                                 </div>
                             </div>

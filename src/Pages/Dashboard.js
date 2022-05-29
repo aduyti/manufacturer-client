@@ -12,7 +12,7 @@ const Dashboard = () => {
                 </div>
                 <div class="drawer-side top-[-100px]">
                     <label for="my-drawer-2" class="drawer-overlay"></label>
-                    <ul class="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content">
+                    <ul class="menu p-4 overflow-y-auto w-56 bg-base-100 text-base-content">
                         <li><NavLink to="/dashboard/">My Profile</NavLink></li>
 
                         <li><NavLink to="/dashboard/addreview">Add Review</NavLink></li>
