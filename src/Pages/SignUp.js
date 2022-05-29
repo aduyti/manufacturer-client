@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -12,6 +12,7 @@ const SignUp = () => {
     const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
     let location = useLocation();
+    const [uName, setName] = useState('')
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [
@@ -23,6 +24,7 @@ const SignUp = () => {
     const [updateProfile, updating, error] = useUpdateProfile(auth);
 
     const signUpClick = async (data) => {
+        setName(data.name);
         await createUserWithEmailAndPassword(data.signEmail, data.signPass);
         await updateProfile({ displayName: data.name });
 
@@ -33,7 +35,7 @@ const SignUp = () => {
     }
 
     if (user) {
-        addUserDB(user.displayName, user.email);
+        addUserDB(uName, user.email);
         getjwt(user.email);
         navigate(from, { replace: true });
     }
@@ -74,7 +76,7 @@ const SignUp = () => {
                                         {errors.signPass?.type === "minLength" && (<span className="pl-5 text-red-600/75 text-xs">At least 6 characters</span>)}
                                     </span>
                                 </label>
-                                <input type="text"
+                                <input type="password"
                                     {...register("signPass", { required: true, minLength: 6 })}
                                     placeholder="password" class="input input-bordered" />
                                 <label class="label">

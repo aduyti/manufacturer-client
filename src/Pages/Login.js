@@ -5,7 +5,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../Components/SocialLogin';
 import Spinner from '../Components/Spinner';
 import getjwt from '../Utilities/Auth/getjwt';
-import addUserDB from '../Utilities/DB/addUserDB';
 import auth from '../Utilities/firebase.init';
 
 const Login = () => {
@@ -28,9 +27,6 @@ const Login = () => {
         return <Spinner />;
     }
     if (user || logUser) {
-        user && addUserDB(user.displayName, user.email);
-        logUser && addUserDB(logUser.user.displayName, logUser.user.email);
-
         navigate(from, { replace: true });
     }
 
@@ -38,7 +34,7 @@ const Login = () => {
         <div className="px-8 md:px-20 h-screen">
             <h3 className="text-primary pt-4 text-2xl font-bold text-center pb-6">Login</h3>
             {(logLoading) && <Spinner />}
-            {(error) && <p className="pl-5 text-red-500 text-sm">{error.message}</p>}
+            {(error) && <p className="pl-5 text-red-500 text-sm text-center">{error.message}</p>}
             <div className="flex justify-center">
                 <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div class="card-body">
@@ -62,7 +58,7 @@ const Login = () => {
                                         {errors.logPass?.type === "minLength" && (<span className="pl-5 text-red-600/75 text-xs">At least 6 characters</span>)}
                                     </span>
                                 </label>
-                                <input type="text"
+                                <input type="password"
                                     {...register("logPass", { required: true, minLength: 6 })}
                                     placeholder="password" class="input input-bordered" />
                                 <label class="label">

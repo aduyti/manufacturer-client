@@ -13,13 +13,13 @@ import MyOrders from "./Pages/MyOrders";
 import Payment from "./Pages/Payment";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
+import Dashboard from "./Pages/Dashboard";
 import ManageProducts from "./Pages/ManageProducts";
 import ManageUser from "./Pages/ManageUser";
 import ManageOrder from "./Pages/ManageOrder";
 import AddReview from "./Pages/AddReview";
 import AddProduct from "./Pages/AddProduct";
 import RequireUser from "./Utilities/Auth/RequireUser";
-import RequireAdmin from "./Utilities/Auth/RequireAdmin";
 import RequireLogin from "./Utilities/Auth/RequireLogin";
 
 
@@ -36,18 +36,17 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
 
           <Route path="/purchase/:id" element={<RequireLogin>
-            <RequireUser><Purchase /></RequireUser>
+            <RequireUser auth="user"><Purchase /></RequireUser>
           </RequireLogin>} />
-          <Route path="/myorder" element={<RequireUser><MyOrders /></RequireUser>} />
-          <Route path="/order/:id" element={<RequireUser><Payment /></RequireUser>} />
 
-          <Route path="/addreview" element={<RequireLogin><AddReview /></RequireLogin>} />
-          <Route path="/profile" element={<RequireLogin><MyProfile /></RequireLogin>} />
+          <Route path="/dashboard" element={<RequireLogin><Dashboard /></RequireLogin>}>
+            <Route index element={<MyProfile />} />
+            <Route path="addreview" element={<RequireUser auth="user"><AddReview /></RequireUser>} />
+            <Route path="myorders" element={<RequireUser auth="user"><MyOrders /></RequireUser>} />
+            <Route path="order/:id" element={<RequireUser auth="user"><Payment /></RequireUser>} />
 
-          <Route path="/products" element={<RequireAdmin><ManageProducts /></RequireAdmin>} />
-          <Route path="/products" element={<RequireAdmin><ManageOrder /></RequireAdmin>} />
-          <Route path="/products" element={<RequireAdmin><ManageUser /></RequireAdmin>} />
-          <Route path="/products" element={<RequireAdmin><AddProduct /></RequireAdmin>} />
+
+          </Route>
 
 
           <Route path="/*" element={<NotFound />} />

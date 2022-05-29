@@ -5,7 +5,6 @@ import Spinner from '../../Components/Spinner';
 import auth from '../firebase.init';
 
 const RequireLogin = ({ children }) => {
-    console.log('login');
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
     if (loading) {

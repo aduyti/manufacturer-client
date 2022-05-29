@@ -1,12 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
 
-const useUser = email => {
-    const [user, setUser] = useState({});
+const useUser = () => {
+    const [user] = useAuthState(auth);
+    const [nuser, setUser] = useState({});
     useEffect(() => {
-        axios.get(`http://localhost:5555/user/${email}`)
+        axios.get(`http://localhost:5555/user/${user.email}`)
             .then(res => setUser(res.data))
-    }, [email]);
-    return [user, setUser];
+
+    }, [user]);
+    return [nuser, setUser];
 }
 export default useUser;

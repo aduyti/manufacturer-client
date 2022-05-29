@@ -2,6 +2,7 @@ import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import NavLinks from './NavLinks';
 import Footer from '../Components/Footer';
+import { DotsVerticalIcon } from '@heroicons/react/outline';
 
 
 const NavBar = ({ children }) => {
@@ -10,6 +11,11 @@ const NavBar = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
                 <div class="px-4 md:px-14 navbar fixed top-0 z-50 bg-base-100">
+                    <div class="flex-none lg:hidden">
+                        <label for="my-drawer-2" class="btn btn-square btn-ghost">
+                            <DotsVerticalIcon className="inline-block w-6 h-6" />
+                        </label>
+                    </div>
                     <div class="flex-1 px-2 mx-2 text-2xl font-semibold">The Bolts</div>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -22,7 +28,7 @@ const NavBar = ({ children }) => {
                         </ul>
                     </div>
                 </div>
-                <div class="mt-28">
+                <div class="mt-16">
                     {children}
                 </div>
 
