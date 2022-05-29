@@ -1,14 +1,15 @@
 # The Bolts (client-side)
 - [Server Link](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-aduyti)
 - [Live Link]()
-- Admin: `admin@thebolts.co` Password: `admin1`
+- Admin: `admin@thebolts.co` Password: `admin?`
 
 ## Features
 - full responsive view
-- google map, inventory chart data
-- protected route for manage inventory
+- google map
+- latest data on home page
+- 3 types protected route 
 - verified user for protected route
-- toast for messages and alerts
+- modals for confirmation
 
 
 ## Libraries & Packages
