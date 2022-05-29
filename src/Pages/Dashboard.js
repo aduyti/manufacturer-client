@@ -7,6 +7,20 @@ const Dashboard = () => {
             <div class="drawer drawer-mobile">
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content p-4">
+
+                    <label for="cancel-modal" id="cancel" class="btn modal-button hidden">open modal</label>
+                    <input type="checkbox" id="cancel-modal" class="modal-toggle" />
+                    <div class="modal">
+                        <div class="modal-box">
+                            <h3 class="font-bold text-lg">You Want to Cancel?</h3>
+                            <div class="modal-action">
+                                <label for="cancel-modal" class="btn"
+                                    onClick={() => window.location.reload()}>
+                                    Yes</label>
+                            </div>
+                        </div>
+                    </div>
+
                     <Outlet />
 
                 </div>
@@ -21,7 +35,7 @@ const Dashboard = () => {
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

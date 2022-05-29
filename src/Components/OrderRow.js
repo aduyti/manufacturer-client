@@ -11,14 +11,19 @@ const OrderRow = ({ order, acc }) => {
     const [product] = useProduct(order.boltID);
 
     const cancelClick = id => {
+        document.getElementById('cancel').click();
         const Available = product.Available + quantity;
         axios.put(`http://localhost:5555/boltup/${product._id}`, { Available });
         orderStatus("canceled", id);
-        setStatus("canceled")
+        setStatus("canceled");
+        // window.location.reload();
+
     }
     const shipClick = id => {
         orderStatus("shipped", id);
-        setStatus("shipped")
+        setStatus("shipped");
+        window.location.reload();
+
     }
     return (
         <tr>
@@ -28,17 +33,14 @@ const OrderRow = ({ order, acc }) => {
             <td className="">
                 <div className="flex flex-col justify-center items-center">
                     <p><span class="badge">{status}</span></p>
-                    <button className="block" onClick={() => cancelClick(_id)}>
-                        <span class="badge badge-error">Cancel</span></button>
-
                     {
-                        status === "placed" &&
-                        (acc === "user" ?
-                            <button className="block" onClick={() => navigate(`/order/${_id}`)}>
-                                <span class="badge badge-warning">Pay Now</span></button> :
-                            <button className="block" onClick={() => cancelClick(_id)}>
-                                <span class="badge badge-error">Cancel</span></button>
-                        )
+                        status === "placed" && <> < button for="cancel-modal" className="block" onClick={() => cancelClick(_id)}>
+                            <span class="badge badge-error">Cancel</span></button>
+                            {acc === "user" &&
+                                <button className="block" onClick={() => navigate(`/dashboard/order/${_id}`)}>
+                                    <span class="badge badge-warning">Pay Now</span></button>
+
+                            }</>
                     }
                     {
                         status === "paid" && acc === "admin" &&
@@ -46,8 +48,10 @@ const OrderRow = ({ order, acc }) => {
                             <span class="badge badge-info">Ship</span></button>
                     }
                 </div>
+
+
             </td>
-        </tr>
+        </tr >
     );
 };
 
