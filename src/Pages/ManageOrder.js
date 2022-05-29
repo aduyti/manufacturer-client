@@ -5,7 +5,7 @@ import OrderRow from '../Components/OrderRow';
 const ManageOrder = () => {
     const [orders, setOrder] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:5555/allorders`)
+        axios.get(`https://mysterious-coast-30403.herokuapp.com/allorders`)
             .then(res => setOrder(res.data))
     }, [])
 

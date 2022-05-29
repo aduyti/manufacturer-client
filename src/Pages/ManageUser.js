@@ -5,7 +5,7 @@ import UserRow from '../Components/UserRow';
 const ManageUser = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5555/users')
+        axios.get('https://mysterious-coast-30403.herokuapp.com/users')
             .then(res => setUsers(res.data))
     }, [])
 

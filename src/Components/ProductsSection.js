@@ -8,7 +8,7 @@ import Spinner from './Spinner';
 
 const ProductsSection = () => {
     const { data, isLoading } = useQuery('bolts', () =>
-        axios.get('http://localhost:5555/6bolts')
+        axios.get('https://mysterious-coast-30403.herokuapp.com/6bolts')
     )
     if (isLoading) return <Spinner />;
     return (

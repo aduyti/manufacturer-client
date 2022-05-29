@@ -12,7 +12,7 @@ const OrderRow = ({ order, acc }) => {
 
     const cancelClick = id => {
         const Available = product.Available + quantity;
-        axios.put(`http://localhost:5555/boltup/${product._id}`, { Available });
+        axios.put(`https://mysterious-coast-30403.herokuapp.com/boltup/${product._id}`, { Available });
         orderStatus("canceled", id);
         setStatus("canceled");
         window.location.reload();

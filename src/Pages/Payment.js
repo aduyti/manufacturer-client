@@ -10,7 +10,7 @@ const Payment = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:5555/order/${id}`)
+        axios.get(`https://mysterious-coast-30403.herokuapp.com/order/${id}`)
             .then(res => setOrder(res.data))
     }, [id])
 

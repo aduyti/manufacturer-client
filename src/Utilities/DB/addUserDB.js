@@ -1,6 +1,6 @@
 import axios from "axios"
 
 const addUserDB = (name, email) => {
-    axios.put("http://localhost:5555/user", [name, email])
+    axios.put("https://mysterious-coast-30403.herokuapp.com/user", [name, email])
 }
 export default addUserDB;

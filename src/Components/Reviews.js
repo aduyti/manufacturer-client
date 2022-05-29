@@ -7,7 +7,7 @@ import Spinner from './Spinner';
 
 const Reviews = () => {
     const { data, isLoading } = useQuery('reviews', () =>
-        axios.get('http://localhost:5555/reviews')
+        axios.get('https://mysterious-coast-30403.herokuapp.com/reviews')
     )
     if (isLoading) return <Spinner />;
     return (

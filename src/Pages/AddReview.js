@@ -14,7 +14,7 @@ const AddReview = () => {
         review.rating = parseInt(data.rating);
         review.uname = user.name;
         review.uemail = user.email;
-        await axios.post('http://localhost:5555/addreview', review);
+        await axios.post('https://mysterious-coast-30403.herokuapp.com/addreview', review);
         navigate('/');
     }
 

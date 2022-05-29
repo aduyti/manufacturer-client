@@ -7,7 +7,7 @@ const useUser = () => {
     const [user] = useAuthState(auth);
     const [nuser, setUser] = useState({});
     useEffect(() => {
-        axios.get(`http://localhost:5555/user/${user.email}`)
+        axios.get(`https://mysterious-coast-30403.herokuapp.com/user/${user.email}`)
             .then(res => setUser(res.data))
 
     }, [user]);

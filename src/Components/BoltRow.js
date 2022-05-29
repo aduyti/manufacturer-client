@@ -1,12 +1,10 @@
 import axios from 'axios';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const BoltRow = ({ bolt }) => {
     const { name, image, moq, Available, _id } = bolt;
-    const navigate = useNavigate();
     const deleteClick = id => {
-        axios.delete(`http://localhost:5555/bolt/${id}`)
+        axios.delete(`https://mysterious-coast-30403.herokuapp.com/bolt/${id}`)
         window.location.reload();
     }
     return (
@@ -16,14 +14,9 @@ const BoltRow = ({ bolt }) => {
             <td>{moq}</td>
             <td>{Available}</td>
             <td>
-                <div className="flex flex-col justify-center items-center">
-
-                    <button className="block" onClick={() => navigate(`/dashboard/manageproduct/${_id}`)}>
-                        <span className="badge ">Manage</span></button>
-                    <label for={`del-bolt-${_id}`} >
-                        <span className="badge badge-warning">Delete</span>
-                    </label>
-                </div>
+                <label for={`del-bolt-${_id}`} >
+                    <span className="badge badge-warning">Delete</span>
+                </label>
 
 
                 <input type="checkbox" id={`del-bolt-${_id}`} class="modal-toggle" />

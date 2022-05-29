@@ -5,7 +5,7 @@ const UserRow = ({ user }) => {
     const { name, email, admin, _id } = user;
 
     const makeAdmin = id => {
-        axios.put(`http://localhost:5555/useradmin/${id}`)
+        axios.put(`https://mysterious-coast-30403.herokuapp.com/useradmin/${id}`)
         window.location.reload();
 
     }
