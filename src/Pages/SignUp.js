@@ -32,12 +32,10 @@ const SignUp = () => {
         return <Spinner />;
     }
 
-    if (createUser || user) {
-        if (createUser) {
-            addUserDB(createUser.user.displayName, createUser.user.email);
-            getjwt(createUser.user.email);
-        }
-        // navigate(from, { replace: true });
+    if (user) {
+        addUserDB(user.displayName, user.email);
+        getjwt(user.email);
+        navigate(from, { replace: true });
     }
     return (
         <div className="px-8 md:px-20 h-screen">

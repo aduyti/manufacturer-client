@@ -1,11 +1,7 @@
-import React from 'react';
 
-const RequireUser = () => {
-    return (
-        <div>
-
-        </div>
-    );
+const RequireUser = ({ children }) => {
+    console.log('user');
+    return children;
 };
 
 export default RequireUser;
