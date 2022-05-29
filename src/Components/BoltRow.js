@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -5,7 +6,8 @@ const BoltRow = ({ bolt }) => {
     const { name, image, moq, Available, _id } = bolt;
     const navigate = useNavigate();
     const deleteClick = id => {
-        console.log("first")
+        axios.delete(`http://localhost:5555/bolt/${id}`)
+        window.location.reload();
     }
     return (
         <tr>
