@@ -19,7 +19,7 @@ const AddProduct = () => {
             unitprice: parseFloat(data.unitprice)
         }
         await axios.post('https://mysterious-coast-30403.herokuapp.com/addbolt', bolt);
-        // navigate('/dashboard/manageorders');
+        navigate('/dashboard/manageorders');
 
 
     }

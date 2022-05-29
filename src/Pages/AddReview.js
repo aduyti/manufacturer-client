@@ -46,7 +46,7 @@ const AddReview = () => {
                                 {...register("text", { required: true })} className="textarea textarea-bordered" />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Update Profile</button>
+                            <button className="btn btn-primary">Post</button>
                         </div>
                     </form>
                 </div>

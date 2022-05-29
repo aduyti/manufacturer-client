@@ -39,7 +39,7 @@ const OrderRow = ({ order, acc }) => {
                     <p><span className="badge">{status}</span></p>
                     {
                         status === "placed" && <>
-                            <label for={`cncl-odr-${_id}`} >
+                            <label htmlFor={`cncl-odr-${_id}`} >
                                 <span className="badge badge-error">Cancel</span>
                             </label>
                             {acc === "user" &&
@@ -55,13 +55,13 @@ const OrderRow = ({ order, acc }) => {
                     }
                 </div>
 
-                <input type="checkbox" id={`cncl-odr-${_id}`} class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                        <label for={`cncl-odr-${_id}`} class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                        <h3 class="font-bold text-lg">Cancel This Order?</h3>
-                        <div class="modal-action">
-                            <label for={`cncl-odr-${_id}`} class="btn" onClick={() => cancelClick(_id)}>Yes</label>
+                <input type="checkbox" id={`cncl-odr-${_id}`} className="modal-toggle" />
+                <div className="modal">
+                    <div className="modal-box relative">
+                        <label htmlFor={`cncl-odr-${_id}`} className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                        <h3 className="font-bold text-lg">Cancel This Order?</h3>
+                        <div className="modal-action">
+                            <label htmlFor={`cncl-odr-${_id}`} className="btn" onClick={() => cancelClick(_id)}>Yes</label>
                         </div>
                     </div>
                 </div>

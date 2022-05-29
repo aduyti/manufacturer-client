@@ -14,18 +14,18 @@ const BoltRow = ({ bolt }) => {
             <td>{moq}</td>
             <td>{Available}</td>
             <td>
-                <label for={`del-bolt-${_id}`} >
+                <label htmlFor={`del-bolt-${_id}`} >
                     <span className="badge badge-warning">Delete</span>
                 </label>
 
 
-                <input type="checkbox" id={`del-bolt-${_id}`} class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                        <label for={`del-bolt-${_id}`} class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                        <h3 class="font-bold text-lg">Delete {name}?</h3>
-                        <div class="modal-action">
-                            <label for={`del-bolt-${_id}`} class="btn" onClick={() => deleteClick(_id)}>Yes</label>
+                <input type="checkbox" id={`del-bolt-${_id}`} className="modal-toggle" />
+                <div className="modal">
+                    <div className="modal-box relative">
+                        <label htmlFor={`del-bolt-${_id}`} className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                        <h3 className="font-bold text-lg">Delete {name}?</h3>
+                        <div className="modal-action">
+                            <label htmlFor={`del-bolt-${_id}`} className="btn" onClick={() => deleteClick(_id)}>Yes</label>
                         </div>
                     </div>
                 </div>

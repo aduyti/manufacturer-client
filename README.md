@@ -1,6 +1,6 @@
 # The Bolts (client-side)
 - [Server Link](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-aduyti)
-- [Live Link]()
+- [Live Link](https://the-bolts.web.app/)
 - Admin: `admin@thebolts.co` Password: `admin?`
 
 ## Features
