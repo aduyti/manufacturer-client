@@ -1,6 +1,12 @@
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
+import useUser from "../Hooks/useUser";
 
 const RequireUser = ({ children }) => {
-    console.log('user');
+    const [user] = useAuthState(auth);
+
+    const [cUser] = useUser(user.email);
+    console.log(cUser);
     return children;
 };
 
