@@ -8,6 +8,8 @@ const MyOrders = () => {
     const [orders] = useOrdersEmail(user.email);
     return (
         <div className="px-8 md:px-20 w-full">
+            <h3 className="text-primary pt-4 text-2xl font-bold text-center pb-6">My Orders</h3>
+
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* <!-- head --> */}

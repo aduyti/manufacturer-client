@@ -10,19 +10,6 @@ const Dashboard = () => {
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content p-4">
 
-                    <label htmlFor="cancel-modal" id="cancel" className="btn modal-button hidden">open modal</label>
-                    <input type="checkbox" id="cancel-modal" className="modal-toggle" />
-                    <div className="modal">
-                        <div className="modal-box">
-                            <h3 className="font-bold text-lg">You Want to Cancel?</h3>
-                            <div className="modal-action">
-                                <label htmlFor="cancel-modal" className="btn"
-                                    onClick={() => window.location.reload()}>
-                                    Yes</label>
-                            </div>
-                        </div>
-                    </div>
-
                     <Outlet />
 
                 </div>

@@ -11,12 +11,11 @@ const OrderRow = ({ order, acc }) => {
     const [product] = useProduct(order.boltID);
 
     const cancelClick = id => {
-        document.getElementById('cancel').click();
         const Available = product.Available + quantity;
         axios.put(`http://localhost:5555/boltup/${product._id}`, { Available });
         orderStatus("canceled", id);
         setStatus("canceled");
-        // window.location.reload();
+        window.location.reload();
 
     }
     const shipClick = id => {
@@ -39,8 +38,10 @@ const OrderRow = ({ order, acc }) => {
                 <div className="flex flex-col justify-center items-center">
                     <p><span className="badge">{status}</span></p>
                     {
-                        status === "placed" && <> < button htmlFor="cancel-modal" className="block" onClick={() => cancelClick(_id)}>
-                            <span className="badge badge-error">Cancel</span></button>
+                        status === "placed" && <>
+                            <label for={`cncl-odr-${_id}`} >
+                                <span className="badge badge-error">Cancel</span>
+                            </label>
                             {acc === "user" &&
                                 <button className="block" onClick={() => navigate(`/dashboard/order/${_id}`)}>
                                     <span className="badge badge-warning">Pay Now</span></button>
@@ -53,6 +54,18 @@ const OrderRow = ({ order, acc }) => {
                             <span className="badge badge-info">Ship</span></button>
                     }
                 </div>
+
+                <input type="checkbox" id={`cncl-odr-${_id}`} class="modal-toggle" />
+                <div class="modal">
+                    <div class="modal-box relative">
+                        <label for={`cncl-odr-${_id}`} class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                        <h3 class="font-bold text-lg">Cancel This Order?</h3>
+                        <div class="modal-action">
+                            <label for={`cncl-odr-${_id}`} class="btn" onClick={() => cancelClick(_id)}>Yes</label>
+                        </div>
+                    </div>
+                </div>
+
 
 
             </td>
