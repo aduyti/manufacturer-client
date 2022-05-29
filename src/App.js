@@ -45,6 +45,10 @@ function App() {
             <Route path="myorders" element={<RequireUser acc="user"><MyOrders /></RequireUser>} />
             <Route path="order/:id" element={<RequireUser acc="user"><Payment /></RequireUser>} />
 
+            <Route path="addproduct" element={<RequireUser acc="admin"><AddProduct /></RequireUser>} />
+            <Route path="manageorders" element={<RequireUser acc="admin"><ManageOrder /></RequireUser>} />
+            <Route path="manageproducts" element={<RequireUser acc="admin"><ManageProducts /></RequireUser>} />
+            <Route path="manageusers" element={<RequireUser acc="admin"><ManageUser /></RequireUser>} />
 
           </Route>
 

@@ -46,7 +46,7 @@ const Purchase = () => {
                             <div className="flex justify-around items-center flex-col-reverse sm:flex-row ">
                                 <div>
                                     <h2 className="text-3xl font-bold pb-2">{bolt.name}</h2>
-                                    <h2 class="font-bold">Unit Price: ${bolt.unitprice}</h2>
+                                    <h2 className="font-bold">Unit Price: ${bolt.unitprice}</h2>
                                     <p>Description: {bolt.description}</p>
                                     <div className="font-semibold text-slate-500">
                                         <h2>MOQ: {bolt.moq}</h2>
@@ -55,35 +55,35 @@ const Purchase = () => {
                                 </div>
                                 <img src={bolt.image} alt={bolt.name} className="w-48 border rounded-lg" />
                             </div>
-                            <form class="form-control justify-center my-8" onSubmit={handleSubmit(orderClick)}>
+                            <form className="form-control justify-center my-8" onSubmit={handleSubmit(orderClick)}>
                                 {errors.quantity?.type === "max" && (<span className="pl-5 pb-3 text-red-500 text-xs">Exceeded Available Quantity</span>)}
                                 {errors.quantity?.type === "min" && (<span className="pl-5 pb-3 text-red-500 text-xs">MOQ is {bolt.moq}</span>)}
-                                <div class="input-group justify-center">
+                                <div className="input-group justify-center">
                                     <input type="number"
                                         {...register("quantity",
                                             { required: true, max: bolt.Available, min: bolt.moq })}
                                         placeholder="Enter Order Amount" defaultValue={bolt.moq}
-                                        class="input input-bordered border-primary" />
-                                    <button class="btn btn-primary">
+                                        className="input input-bordered border-primary" />
+                                    <button className="btn btn-primary">
                                         Confirm Order
                                     </button>
                                 </div>
                             </form>
 
 
-                            <label id="order-summary" for="order-modal" class="btn modal-button hidden">open modal</label>
+                            <label id="order-summary" htmlFor="order-modal" className="btn modal-button hidden">open modal</label>
 
-                            <input type="checkbox" id="order-modal" class="modal-toggle" />
-                            <div class="modal">
-                                <div class="modal-box relative">
-                                    <label for="order-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                                    <h3 class="text-lg font-bold">Oder Summary</h3>
-                                    <p class="py-4">Product Name: {newOrder.boltName}</p>
-                                    <p class="py-4">Product description: {bolt.description}</p>
-                                    <p class="py-4">Order Quantity: {newOrder.quantity}</p>
-                                    <p class="py-4">Total Amount: ${newOrder.price}</p>
-                                    <div class="modal-action">
-                                        <label onClick={() => navigate(`/dashboard/myorders`)} class="btn btn-primary">View Orders</label>
+                            <input type="checkbox" id="order-modal" className="modal-toggle" />
+                            <div className="modal">
+                                <div className="modal-box relative">
+                                    <label htmlFor="order-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                                    <h3 className="text-lg font-bold">Oder Summary</h3>
+                                    <p className="py-4">Product Name: {newOrder.boltName}</p>
+                                    <p className="py-4">Product description: {bolt.description}</p>
+                                    <p className="py-4">Order Quantity: {newOrder.quantity}</p>
+                                    <p className="py-4">Total Amount: ${newOrder.price}</p>
+                                    <div className="modal-action">
+                                        <label onClick={() => navigate(`/dashboard/myorders`)} className="btn btn-primary">View Orders</label>
                                     </div>
                                 </div>
                             </div>

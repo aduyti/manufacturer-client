@@ -17,10 +17,10 @@ const SocialLogin = () => {
         navigate(from, { replace: true });
     }
     return (
-        <div class="form-control mt-6">
+        <div className="form-control mt-6">
             {loading && <Spinner />}
             {error && <p className="text-red-500 text-xs">{error.message}</p>}
-            <button class="btn btn-outline btn-primary" onClick={async () => await signInWithGoogle()}>Continue With Google</button>
+            <button className="btn btn-outline btn-primary" onClick={async () => await signInWithGoogle()}>Continue With Google</button>
         </div>
     );
 };

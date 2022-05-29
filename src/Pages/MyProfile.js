@@ -28,41 +28,41 @@ const MyProfile = () => {
                     {user?.linkedin && <a href={user.linkedin} target="_blank" className="text-2xl text-primary" rel="noreferrer">LinkedIn</a>}
 
                 </div>
-                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-8 mx-auto">
-                    <div class="card-body">
-                        <h1 class="text-xl font-bold text-center text-primary">Update Profile</h1>
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-8 mx-auto">
+                    <div className="card-body">
+                        <h1 className="text-xl font-bold text-center text-primary">Update Profile</h1>
 
                         <form onSubmit={handleSubmit(profileUpdate)}>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Address</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Address</span>
                                 </label>
                                 <input type="text" placeholder="Address"
-                                    {...register("address")} class="input input-bordered" />
+                                    {...register("address")} className="input input-bordered" />
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Phone</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Phone</span>
                                 </label>
                                 <input type="text" placeholder="Phone"
-                                    {...register("phone")} class="input input-bordered" />
+                                    {...register("phone")} className="input input-bordered" />
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Education</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Education</span>
                                 </label>
                                 <input type="text" placeholder="Education"
-                                    {...register("education")} class="input input-bordered" />
+                                    {...register("education")} className="input input-bordered" />
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">LinkedIn Profile Link</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">LinkedIn Profile Link</span>
                                 </label>
                                 <input type="text" placeholder="LinkedIn Profile Link"
-                                    {...register("linkedin")} class="input input-bordered" />
+                                    {...register("linkedin")} className="input input-bordered" />
                             </div>
-                            <div class="form-control mt-6">
-                                <button class="btn btn-primary">Update Profile</button>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-primary">Update Profile</button>
                             </div>
                         </form>
                     </div>

@@ -36,12 +36,12 @@ const Login = () => {
             {(logLoading) && <Spinner />}
             {(error) && <p className="pl-5 text-red-500 text-sm text-center">{error.message}</p>}
             <div className="flex justify-center">
-                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={handleSubmit(loginClick)} >
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email
                                         {errors.logEmail?.type === "pattern" && (<span className="pl-5 text-red-600/75 text-xs">Enter a valid email</span>)}
                                         {errors.logEmail?.type === "required" && (<span className="pl-5 text-red-600/75 text-xs">Email required</span>)}
                                     </span>
@@ -49,24 +49,24 @@ const Login = () => {
                                 <input type="text"
                                     {...register("logEmail",
                                         { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ })}
-                                    placeholder="email" class="input input-bordered" />
+                                    placeholder="email" className="input input-bordered" />
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password
                                         {errors.logPass?.type === "required" && (<span className="pl-5 text-red-600/75 text-xs">Password required</span>)}
                                         {errors.logPass?.type === "minLength" && (<span className="pl-5 text-red-600/75 text-xs">At least 6 characters</span>)}
                                     </span>
                                 </label>
                                 <input type="password"
                                     {...register("logPass", { required: true, minLength: 6 })}
-                                    placeholder="password" class="input input-bordered" />
-                                <label class="label">
-                                    <Link to="/signup" class="label-text-alt link link-hover">Sign Up</Link>
+                                    placeholder="password" className="input input-bordered" />
+                                <label className="label">
+                                    <Link to="/signup" className="label-text-alt link link-hover">Sign Up</Link>
                                 </label>
                             </div>
-                            <div class="form-control mt-6">
-                                <button class="btn btn-primary">Login</button>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
                         <SocialLogin />

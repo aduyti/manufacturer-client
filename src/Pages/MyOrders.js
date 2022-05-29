@@ -8,8 +8,8 @@ const MyOrders = () => {
     const [orders] = useOrdersEmail(user.email);
     return (
         <div className="px-8 md:px-20 w-full">
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

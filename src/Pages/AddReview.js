@@ -20,17 +20,17 @@ const AddReview = () => {
 
     return (
         <div className="px-8 md:px-20 w-full">
-            <h1 class="text-xl font-bold text-center text-primary">Add A Review</h1>
-            <div class="card flex-shrink-0 w-full mx-auto max-w-sm shadow-2xl bg-base-100 mt-8">
-                <div class="card-body">
+            <h1 className="text-xl font-bold text-center text-primary">Add A Review</h1>
+            <div className="card flex-shrink-0 w-full mx-auto max-w-sm shadow-2xl bg-base-100 mt-8">
+                <div className="card-body">
 
                     <form onSubmit={handleSubmit(reviewConfirm)}>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">rating</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">rating</span>
                             </label>
                             <select placeholder="rating"
-                                {...register("rating", { required: true })} class="input input-bordered">
+                                {...register("rating", { required: true })} className="input input-bordered">
                                 <option value="5">5</option>
                                 <option value="4">4</option>
                                 <option value="3">3</option>
@@ -38,15 +38,15 @@ const AddReview = () => {
                                 <option value="1">1</option>
                             </select>
                         </div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Your Review</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Your Review</span>
                             </label>
                             <textarea type="textarea" placeholder="Write your review"
-                                {...register("text", { required: true })} class="textarea textarea-bordered" />
+                                {...register("text", { required: true })} className="textarea textarea-bordered" />
                         </div>
-                        <div class="form-control mt-6">
-                            <button class="btn btn-primary">Update Profile</button>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Update Profile</button>
                         </div>
                     </form>
                 </div>

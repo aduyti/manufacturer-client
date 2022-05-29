@@ -27,25 +27,30 @@ const OrderRow = ({ order, acc }) => {
     }
     return (
         <tr>
-            <th>{boltName}</th>
+            <th>
+                <div className="flex flex-col justify-center items-center">
+                    <div>{boltName}</div>
+                    {order?.trnxId && <div className="text-sm text-red-600">{order?.trnxId}</div>}
+                </div>
+            </th>
             <td>{quantity}</td>
             <td>{price}</td>
-            <td className="">
+            <td>
                 <div className="flex flex-col justify-center items-center">
-                    <p><span class="badge">{status}</span></p>
+                    <p><span className="badge">{status}</span></p>
                     {
-                        status === "placed" && <> < button for="cancel-modal" className="block" onClick={() => cancelClick(_id)}>
-                            <span class="badge badge-error">Cancel</span></button>
+                        status === "placed" && <> < button htmlFor="cancel-modal" className="block" onClick={() => cancelClick(_id)}>
+                            <span className="badge badge-error">Cancel</span></button>
                             {acc === "user" &&
                                 <button className="block" onClick={() => navigate(`/dashboard/order/${_id}`)}>
-                                    <span class="badge badge-warning">Pay Now</span></button>
+                                    <span className="badge badge-warning">Pay Now</span></button>
 
                             }</>
                     }
                     {
                         status === "paid" && acc === "admin" &&
                         <button className="block" onClick={() => shipClick(_id)}>
-                            <span class="badge badge-info">Ship</span></button>
+                            <span className="badge badge-info">Ship</span></button>
                     }
                 </div>
 

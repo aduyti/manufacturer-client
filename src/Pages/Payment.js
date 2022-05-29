@@ -31,9 +31,9 @@ const Payment = () => {
                     <h2 className="text-2xl font-bold">Status: {order.status}</h2>
 
                 </div>
-                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-8 mx-auto">
-                    <div class="card-body">
-                        <h1 class="text-xl font-bold text-center text-primary">Pay Here</h1>
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-8 mx-auto">
+                    <div className="card-body">
+                        <h1 className="text-xl font-bold text-center text-primary">Pay Here</h1>
 
                         <p> Pay {order.price}USD to confirm your order</p>
                         <button class={`btn btn-primary ${order.status !== "placed" && "btn-disabled"}`} onClick={payHandle}>Pay</button>
